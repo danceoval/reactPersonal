@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Dan Abraham" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.leninism.biz" />
+    <meta property="og:image" content="https://www.leninism.biz" />
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Dan Abraham - NYC Comic and Producer">
+    <title>Hi, I'm Dan</title>
+    <!-- Not present in the tutorial. Just for basic styling. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+  </head>
+  <body>
+  <div class="container" id="main"></div>  
+    <script type="text/babel">
+      /*
+        YES THIS IS IN REACTJS BC I AM A COMIC WITH REAL WORLD SKILLS
+      */
+
+      //Components
+      var Header = React.createClass({
+        render: function() {
+          return (
+            <div className="row">
+              <div id="header">
+                <h1>Dan Abraham</h1>&nbsp;&nbsp;<span id="title">Comic and Producer</span>
+                <hr />
+                <ul className="flexbox" id="contact">
+                 
+                  <li>
+                    <span className="dark">email </span>
+                    <span className="light">danabrahamcomic@gmail.com</span>
+                  </li>
+                  <li>
+                    <span className="dark">twitter </span>
+                    <span className="light">@danceoval</span>
+                  </li>
+                  <li>
+                    <span className="dark">facebook </span>
+                    <span className="light">facebook.com/danceoval</span>
+                  </li>
+                  <li>
+                    <span className="dark">location </span>
+                    <span className="light">New York, New York</span>
+                  </li>
+                </ul>
+              </div>  
+            </div>
+          );
+        }
+      });
+      
+      var Headshot = React.createClass({
+
+        render : function() {
+          return (
+            <div className='col-3'>
+              <img src="/img/shot.jpg" id="headshot" />
+            </div>
+          );
+        }
+      });
+
+      var Bio = React.createClass({
+
+        render : function() {
+          return (
+            <div id="bio" className='col-3'> 
+
+              <h3>Hi, I'm Dan</h3>
+              <h4 className="content">I'm a stand up comic based in NYC.</h4>
+                <h4 className="content">I currently produce <a href="http://www.standup.nyc" rel="standup.nyc" target="_blank">Standup.NYC</a> a popular weekly showcase every Saturday in Chelsea. </h4>
+              <h4 className="content">I've also produced some pretty cool <a href="http://www.wntt.tv" rel="We Need To Talk" target="_blank">interactive</a> and <a href="https://www.youtube.com/watch?v=SrcXW7wNITk" rel="How To Roast" target="_blank">VR</a> sketches.</h4>
+              <h4 className="content"> You can also listen to my voice on <a href="http://www.keithandthegirl.com/guest/663/dan-abraham" rel="KATG" target="_blank">various podcasts</a>.
+              </h4>
+            </div>
+          );
+        }
+      })
+        
+
+      var BodyContent = React.createClass({
+        render : function() {
+          return (
+            <div >
+              <Headshot />
+              <Bio />
+            </div>
+           
+          );
+        }
+      });
+
+      var Site = React.createClass({
+        render : function() {
+          return (
+            <div>
+              <Header />
+              <BodyContent />
+            </div>
+          );
+        }
+      })
+
+      //RENDER
+      ReactDOM.render(
+        <Site />,
+        document.getElementById('main')
+      );
+    </script>
+  </body>
+</html>
