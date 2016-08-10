@@ -61,11 +61,22 @@
       });
       
       var Headshot = React.createClass({
-
+        getInitialState: function(){
+          return {hover: false}
+        },
+        toggleHover: function(){
+          this.setState({hover: !this.state.hover})
+        },
         render : function() {
+          var backgroundSrc;
+          if (this.state.hover) {
+            backgroundSrc =  "/img/shot2.jpg";
+          } else {
+            backgroundSrc = "/img/shot.jpg" ;
+          }
           return (
-            <div className='col-3'>
-              <img src="/img/shot.jpg" id="headshot" />
+            <div className='col-3' >
+              <img src={backgroundSrc} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} id="headshot" />
             </div>
           );
         }
